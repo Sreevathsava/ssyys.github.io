@@ -12,6 +12,19 @@ header {
   text-align: center;
 }
 
+.banner {
+  background-image: url('banner.jpg'); /* or remove if using only color/text */
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+
 nav a {
   color: white;
   margin: 0 15px;
