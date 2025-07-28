@@ -1,0 +1,15 @@
+Steps to follow to modify the web page - 
+
+Webpage: https://srishuklayajurvedayuvakasangha.co.in/
+
+Local path where pages are tehre : - D:\SriShuklaYajurvedaYuvakaSangha
+
+Github details:
+Link - https://github.com/Sreevathsava/ssyys.github.io
+vathsav.kulkarni@gmail.com
+85@srirama
+
+Godaddy details:
+https://dashboard.godaddy.com/venture?ventureId=4f7304b8-ef7b-4e16-bd0d-09d7ad9a6cd6&ua_placement=shared_header
+Shrishuklayajurveda@gmail.com
+Yagnavalkya
