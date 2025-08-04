@@ -7,6 +7,13 @@
   <title>Sri Shukla Yajurveda Yuvaka Sangha</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<!-- Modal for Image Preview -->
+<div id="imageModal" class="modal" onclick="closeImageModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
 <body>
   <header>
   <div class="header-container">
@@ -42,12 +49,26 @@
       <!--<h3>Scholarship Statistics</h3> -->
       
 	  <!-- Image beneath the button -->
-		<div class="scholarship-image">
-		  <img src="images/scholarship_stats.jpg" alt="Scholarship Statistics" />
-		</div>
+	<div class="scholarship-image">
+	  <img src="images/scholarship_stats.jpg" alt="Scholarship Statistics" onclick="openImageModal(this.src)" />
+	</div>
     </section>
   </section>
 </main>
+
+<script>
+function openImageModal(src) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeImageModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+</script>
+
 
 <footer>
   <p>&copy; 2025 Sri Shukla Yajurveda Yuvaka Sangha</p>
