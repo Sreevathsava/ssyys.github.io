@@ -119,6 +119,24 @@ header {
   transform: scale(1.2);
 }
 
+.scholarship-image {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.scholarship-image img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scholarship-image img:hover {
+  transform: scale(1.02);
+}
+
+
 nav a {
   color: white;
   margin: 0 15px;
