@@ -117,7 +117,7 @@ footer .social-media img {
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 780px) {
+/*@media (max-width: 780px) {
   .nav-toggle { display: block; }
   nav {
     display: none;
@@ -128,7 +128,7 @@ footer .social-media img {
   }
   nav.show { display: flex; }
   nav a { padding: 10px; text-align: center; }
-}
+}*/
 
 /* Move hamburger to left side on mobile */
 @media (max-width: 780px) {
