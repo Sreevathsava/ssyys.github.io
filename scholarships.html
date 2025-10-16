@@ -2,11 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sri Shukla Yajurveda Yuvaka Sangha</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarships - Sri Shukla Yajurveda Yuvaka Sangha</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d6cdf">
 </head>
+
 
 <!-- Modal for Image Preview -->
 <div id="imageModal" class="modal" onclick="closeImageModal()">
@@ -16,20 +19,21 @@
 
 <body>
   <header>
-  <div class="header-container">
-    <img src="banner.jpg" alt="Banner" class="banner-image" />
-  </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-	  <a href="yagnavalkyaworks.html">Works of Sri Yagnavalkya</a>
-	  <a href="bhashyas.html">Bhashya's</a>
-	  <a href="scholarships.html">Scholarships</a>
-	  <a href="gallery.html">Gallery</a>
-	  <a href="publications.html">Publications</a>
-	  <a href="memberslist.html">Members</a>
-      <a href="donate.html">Donate</a>
-    </nav>
+    <div class="header-container">
+      <img src="banner.jpg" alt="Banner" class="banner-image" />
+      <button class="nav-toggle" aria-label="Toggle Menu">☰</button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" >About</a>
+        <a href="yagnavalkyaworks.html">Works of Sri Yagnavalkya</a>
+        <a href="bhashyas.html">Bhashya's</a>
+        <a href="scholarships.html" class="active">Scholarships</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="publications.html">Publications</a>
+        <a href="memberslist.html">Members</a>
+        <a href="donate.html">Donate</a>
+      </nav>
+    </div>
   </header>
   
 <main>
@@ -38,11 +42,11 @@
     <p>This page is dedicated to listing the scholarship events that happen annually from Sri Shukla Yajurveda Yuvaka Sangha.</p>
 
     <!-- Registration Button -->
-    <a href="https://docs.google.com/forms/d/1EPiQSXRk0EHijCgDswOXOsm53HbGK7sjE_Z_Ht75pj8/viewform?pli=1&pli=1&edit_requested=true" 
+    <!-- <a href="https://docs.google.com/forms/d/1EPiQSXRk0EHijCgDswOXOsm53HbGK7sjE_Z_Ht75pj8/viewform?pli=1&pli=1&edit_requested=true" 
        target="_blank" 
        class="registration-button">
       Register for Pratibhapuraskara 2025
-    </a>
+    </a> -->
 
     <!-- Scholarship Statistics -->
     <section class="statistics-section">
@@ -69,11 +73,23 @@ function closeImageModal() {
 }
 </script>
 
+  <div id="footer-placeholder"></div>
+  <script src="footer.js"></script>
+  <script>loadFooter();</script>
 
-<div id="footer-placeholder"></div>
-<script src="footer.js"></script>
-<script>
-  loadFooter();
-</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector("nav");
+      toggle?.addEventListener("click", ()=> nav.classList.toggle("show"));
+    });
+  </script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+  </script>
+
 </body>
 </html>

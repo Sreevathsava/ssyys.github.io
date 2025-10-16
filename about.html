@@ -5,64 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Sri Shukla Yajurveda Yuvaka Sangha</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .content {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .about-image {
-      max-width: 300px;
-      display: block;
-      margin: 20px auto;
-    }
-    h2, p {
-      text-align: left-side;
-    }
-  </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d6cdf">
 </head>
 <body>
-
   <header>
-  <div class="header-container">
-    <img src="banner.jpg" alt="Banner" class="banner-image" />
-  </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-	  <a href="yagnavalkyaworks.html">Works of Sri Yagnavalkya</a>
-	  <a href="bhashyas.html">Bhashya's</a>
-	  <a href="scholarships.html">Scholarships</a>
-	  <a href="gallery.html">Gallery</a>
-	  <a href="publications.html">Publications</a>
-	  <a href="memberslist.html">Members</a>
-      <a href="donate.html">Donate</a> 
-    </nav>
+    <div class="header-container">
+      <img src="banner.jpg" alt="Banner" class="banner-image" />
+      <button class="nav-toggle" aria-label="Toggle Menu">☰</button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="yagnavalkyaworks.html">Works of Sri Yagnavalkya</a>
+        <a href="bhashyas.html">Bhashya's</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="publications.html">Publications</a>
+        <a href="memberslist.html">Members</a>
+        <a href="donate.html">Donate</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <div class="content">    
-
-      
-	  
-	  <h2>About Us</h2>
-
-      <p>
-        <strong>Sri Shukla Yajurveda Yuvaka Sangha</strong> is a non-profit organization dedicated to preserving and promoting the teachings of <strong>Sri Yajnavalkya Rushi</strong>, the great sage and principal exponent of the <strong>Shukla Yajurveda</strong>. Formed by a collective of like-minded youth and scholars, the Sangha is committed to spreading awareness of Vedic heritage, conducting educational programs, and supporting traditional Vedic learning.
-      </p>
-      <p>
-        Through events, workshops, and community outreach, the Sangha seeks to inspire the younger generation to explore the depth of Vedic wisdom, especially the life, teachings, and legacy of <strong>Sri Yajnavalkya Maharshi</strong>, whose contributions form the cornerstone of Shukla Yajurveda tradition.
-      </p>
+    <div class="content">
+      <h2>About Us</h2>
+      <p><strong>Sri Shukla Yajurveda Yuvaka Sangha</strong> is a non-profit organization dedicated to preserving and promoting the teachings of <strong>Sri Yajnavalkya Rushi</strong>, the great sage and principal exponent of the <strong>Shukla Yajurveda</strong>.</p>
+      <p>Formed by a collective of like-minded youth and scholars, the Sangha is committed to spreading awareness of Vedic heritage, conducting educational programs, and supporting traditional Vedic learning.</p>
+      <p>Through events, workshops, and community outreach, the Sangha seeks to inspire the younger generation to explore the depth of Vedic wisdom, especially the life, teachings, and legacy of <strong>Sri Yajnavalkya Maharshi</strong>.</p>
     </div>
   </main>
 
-<div id="footer-placeholder"></div>
-<script src="footer.js"></script>
-<script>
-  loadFooter();
-</script>
+  <div id="footer-placeholder"></div>
+  <script src="footer.js"></script>
+  <script>loadFooter();</script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector("nav");
+      toggle?.addEventListener("click", ()=> nav.classList.toggle("show"));
+    });
+  </script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+  </script>
 </body>
 </html>

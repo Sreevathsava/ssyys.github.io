@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Members List - Sri Shukla Yajurveda Yuvaka Sangha</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members - Sri Shukla Yajurveda Yuvaka Sangha</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d6cdf">
   <style>
     .member-list {
       max-width: 600px;
@@ -31,18 +35,19 @@
   <header>
     <div class="header-container">
       <img src="banner.jpg" alt="Banner" class="banner-image" />
+      <button class="nav-toggle" aria-label="Toggle Menu">☰</button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" >About</a>
+        <a href="yagnavalkyaworks.html">Works of Sri Yagnavalkya</a>
+        <a href="bhashyas.html">Bhashya's</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="publications.html">Publications</a>
+        <a href="memberslist.html" class="active">Members</a>
+        <a href="donate.html">Donate</a>
+      </nav>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-	  <a href="yagnavalkyaworks.html">Works of Sri Yagnavalkya</a>
-	  <a href="bhashyas.html">Bhashya's</a>
-	  <a href="scholarships.html">Scholarships</a>
-	  <a href="gallery.html">Gallery</a>
-	  <a href="publications.html">Publications</a>
-	  <a href="memberslist.html">Members</a>
-      <a href="donate.html">Donate</a>
-    </nav>
   </header>
 
   <main>
@@ -56,7 +61,7 @@
         <dt>Treasurer:</dt><dd>Mr. Karthik B N</dd>
 		<dt>Internal Auditor:</dt><dd>Mrs. Anitha L</dd>
       </dl>
-
+<br></br>
       <h3>General Members</h3>
       <dl>	
 		<dt>Member:</dt><dd>Mr. Sudheendra rao</dd>		
@@ -73,10 +78,23 @@
     </section>
   </main>
 
-<div id="footer-placeholder"></div>
-<script src="footer.js"></script>
-<script>
-  loadFooter();
-</script>
+  <div id="footer-placeholder"></div>
+  <script src="footer.js"></script>
+  <script>loadFooter();</script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector("nav");
+      toggle?.addEventListener("click", ()=> nav.classList.toggle("show"));
+    });
+  </script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+  </script>
+
 </body>
 </html>

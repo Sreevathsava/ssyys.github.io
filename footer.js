@@ -1,11 +1,13 @@
 function loadFooter() {
-  fetch("footer.html")
-    .then(response => {
-      if (!response.ok) throw new Error("Network response was not ok");
-      return response.text();
+  fetch("footer.html", {cache:"no-store"})
+    .then(r => {
+      if (!r.ok) throw new Error("Footer not found");
+      return r.text();
     })
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    })
-    .catch(err => console.error("Footer load failed:", err));
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html)
+    .catch(err => {
+      console.error("Footer load failed:", err);
+      document.getElementById("footer-placeholder").innerHTML =
+        '<footer><p>&copy; 2025 Sri Shukla Yajurveda Yuvaka Sangha</p></footer>';
+    });
 }
