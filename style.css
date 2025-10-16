@@ -43,7 +43,7 @@ header {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 .banner-image {
-  max-height: 60px;
+  max-height: 100px;
   width: auto;
 }
 /*.nav-toggle {
@@ -173,15 +173,21 @@ footer .social-media img {
   nav a { padding: 10px; text-align: center; }
 }
 
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
 /* Move hamburger to left side on mobile */
-@media (max-width: 780px) {
+/*@media (max-width: 780px) {
   .header-container {
     flex-direction: row-reverse;   /* reverse the order: button → logo → nav */
-  }
+/*  }
   .banner-image {
     margin-left: auto;             /* center logo when button is on left */
-  }
-}
+/*  }
+}*/
 
 
 
@@ -351,12 +357,6 @@ footer .social-media img {
 @keyframes zoom {
   from {transform: scale(0)}
   to {transform: scale(1)}
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
 }
 
 main {
