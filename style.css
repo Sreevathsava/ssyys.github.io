@@ -45,7 +45,7 @@ header {
   max-height: 60px;
   width: auto;
 }
-.nav-toggle {
+/*.nav-toggle {
   background: none;
   border: none;
   font-size: 28px;
@@ -65,7 +65,32 @@ nav a {
 }
 nav a:hover {
   background: #eee;
+}*/
+
+/* Mobile Navigation Styles */
+@media (max-width: 780px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #2d6cdf;        /* blue background for mobile menu */
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    color: #fff;                /* white text */
+    padding: 12px 20px;
+  }
+
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.15); /* subtle hover effect */
+  }
 }
+
 /* @media (max-width: 780px) {
   .nav-toggle { display: block; }
   nav { display: none; flex-direction: column; width: 100%; background: #fff; }
