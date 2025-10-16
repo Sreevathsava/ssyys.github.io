@@ -109,7 +109,7 @@ nav a.active {
 }
 
 /* ========== CONTENT ========== */
-.content {
+/*.content {
   max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
@@ -121,8 +121,22 @@ nav a.active {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-}
-
+}*/
+  .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .about-image {
+      max-width: 300px;
+      display: block;
+      margin: 20px auto;
+    }
+    h2, p {
+      text-align: left-side;
+    }
 /* ========== FOOTER ========== */
 footer {
   background: #222;
