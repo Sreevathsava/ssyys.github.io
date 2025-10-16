@@ -46,7 +46,7 @@ header {
   max-height: 100px;
   width: auto;
 }
-/*.nav-toggle {
+.nav-toggle {
   background: none;
   border: none;
   font-size: 28px;
@@ -66,7 +66,7 @@ nav a {
 }
 nav a:hover {
   background: #eee;
-}*/
+}
 
 /* Mobile Navigation Styles */
 @media (max-width: 780px) {
@@ -92,11 +92,11 @@ nav a:hover {
   }
 }
 
-/* @media (max-width: 780px) {
+@media (max-width: 780px) {
   .nav-toggle { display: block; }
   nav { display: none; flex-direction: column; width: 100%; background: #fff; }
   nav.show { display: flex; }
-}*/
+}
 
 nav a.active, nav a[href*="donate"] {
   background: #2d6cdf;
