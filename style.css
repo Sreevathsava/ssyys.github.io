@@ -117,8 +117,11 @@ footer .social-media img {
 }
 
 /* ========== RESPONSIVE ========== */
-/*@media (max-width: 780px) {
-  .nav-toggle { display: block; }
+@media (max-width: 780px) {
+  .nav-toggle { 
+	display: block; 
+    order: -1;                     /* push button to the left */
+    margin-right: auto;}
   nav {
     display: none;
     flex-direction: column;
@@ -128,34 +131,64 @@ footer .social-media img {
   }
   nav.show { display: flex; }
   nav a { padding: 10px; text-align: center; }
-}*/
+}
 
 /* Move hamburger to left side on mobile */
 @media (max-width: 780px) {
   .header-container {
     flex-direction: row-reverse;   /* reverse the order: button → logo → nav */
   }
-  .nav-toggle {
-    order: -1;                     /* push button to the left */
-    margin-right: auto;
-  }
   .banner-image {
     margin-left: auto;             /* center logo when button is on left */
   }
 }
 
-
-
 .banner {
-  background-image: url('banner.jpg'); /* or remove if using only color/text */
+  background-image: url('banner.jpg');
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
-  color: white;
+  background-repeat: no-repeat;
+  padding: 60px 20px;             /* generous top/bottom spacing */
+  color: #fff;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 3px solid #2d6cdf; /* accent line below banner */
 }
+
+/* Overlay for better text readability (optional) */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* semi-transparent overlay */
+  z-index: 0;
+}
+.banner * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 16px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 30px 12px;
+    font-size: 1rem;
+  }
+}
+
 
 /* === Registration Button === */
 .registration-button {
