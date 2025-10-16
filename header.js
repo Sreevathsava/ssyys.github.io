@@ -11,12 +11,12 @@ function loadHeader() {
       const toggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector("nav");
       toggle?.addEventListener("click", () => nav.classList.toggle("show"));
-    })
+    
 		// Highlight active link
 		const current = window.location.pathname.split("/").pop();
 		document.querySelectorAll("nav a").forEach(a => {
 		  if (a.getAttribute("href") === current) a.classList.add("active");
 		});
-	
+	})
     .catch(err => console.error("Header load failed:", err));
 }

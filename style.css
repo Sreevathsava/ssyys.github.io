@@ -130,6 +130,19 @@ footer .social-media img {
   nav a { padding: 10px; text-align: center; }
 }
 
+/* Move hamburger to left side on mobile */
+@media (max-width: 780px) {
+  .header-container {
+    flex-direction: row-reverse;   /* reverse the order: button → logo → nav */
+  }
+  .nav-toggle {
+    order: -1;                     /* push button to the left */
+    margin-right: auto;
+  }
+  .banner-image {
+    margin-left: auto;             /* center logo when button is on left */
+  }
+}
 
 
 
