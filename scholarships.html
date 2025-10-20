@@ -2,84 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scholarships - Sri Shukla Yajurveda Yuvaka Sangha</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#2d6cdf">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2d6cdf" />
 </head>
 
-
-<!--  Modal for Image Preview -->
-<div id="imageModal" onclick="closeImageModal()">
-  <span class="close-btn" onclick="closeImageModal()">×</span>
-  <img id="modalImage" src="" alt="Preview Image" />
-</div>
-
-
 <body>
-	<div id="header-placeholder"></div>
-	<script src="header.js"></script>
-	<script>loadHeader();</script>
-  
-<main>
-  <section>
-      <div class="content">  
-    <h2>Welcome to Scholarship Details</h2>
-    <p>This page is dedicated to listing the scholarship events that happen annually from Sri Shukla Yajurveda Yuvaka Sangha.</p>
+  <!-- ✅ Modal must be inside <body> -->
+  <div id="imageModal" onclick="closeImageModal(event)">
+    <span class="close-btn" onclick="closeImageModal(event)">×</span>
+    <img id="modalImage" src="" alt="Preview Image" />
+  </div>
 
-    <!-- Registration Button -->
-    <!-- <a href="https://docs.google.com/forms/d/1EPiQSXRk0EHijCgDswOXOsm53HbGK7sjE_Z_Ht75pj8/viewform?pli=1&pli=1&edit_requested=true" 
-       target="_blank" 
-       class="registration-button">
-      Register for Pratibhapuraskara 2025
-    </a> -->
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
+  <script src="header.js"></script>
+  <script>loadHeader();</script>
 
-    <!-- Scholarship Statistics -->
-    <section class="statistics-section">
-      <!--<h3>Scholarship Statistics</h3> -->
-      
-	  <!-- Image beneath the button -->
-	<div class="scholarship-image">
-	  <img src="images/scholarship_stats.jpg" alt="Scholarship Statistics" onclick="openImageModal(this.src)" />
-	</div>
+  <main>
+    <section>
+      <div class="content">
+        <h2>Welcome to Scholarship Details</h2>
+        <p>This page is dedicated to listing the scholarship events that happen annually from Sri Shukla Yajurveda Yuvaka Sangha.</p>
+
+        <!-- Scholarship Statistics -->
+        <section class="statistics-section">
+          <div class="scholarship-image">
+            <img src="images/scholarship_stats.jpg" alt="Scholarship Statistics" onclick="openImageModal(this.src)" />
+          </div>
+        </section>
+      </div>
     </section>
-	</div>
-  </section>
-</main>
+  </main>
 
-<script>
-function openImageModal(src) {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  modal.style.display = "flex"; // Use flex for centered layout
-  modalImg.src = src;
-}
-
-function closeImageModal() {
-  document.getElementById("imageModal").style.display = "none";
-}
-
-</script>
-
+  <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
   <script src="footer.js"></script>
   <script>loadFooter();</script>
 
+  <!-- ✅ JS: Modal Handling -->
   <script>
-    document.addEventListener("DOMContentLoaded", function(){
+    function openImageModal(src) {
+      // Check for valid src
+      if (!src || src.trim() === "" || src === window.location.href) return;
+
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+
+    function closeImageModal(event) {
+      // Only close modal if background or close-btn is clicked
+      const isModal = event.target.id === "imageModal" || event.target.classList.contains("close-btn");
+      if (isModal) {
+        document.getElementById("imageModal").style.display = "none";
+      }
+    }
+  </script>
+
+  <!-- Navigation toggle (for mobile) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector("nav");
-      toggle?.addEventListener("click", ()=> nav.classList.toggle("show"));
+      toggle?.addEventListener("click", () => nav.classList.toggle("show"));
     });
   </script>
 
+  <!-- Service Worker -->
   <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
   </script>
-
 </body>
+
 </html>
