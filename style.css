@@ -26,13 +26,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
+  padding: 6px 12px; /* Reduced vertical padding */
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .banner-image {
-  max-height: 100px;
+  max-height: 60px;  /* Reduced from 100px to make header shorter */
   width: auto;
 }
 
@@ -49,15 +49,16 @@ header {
 /* ====== NAVIGATION ====== */
 nav {
   display: flex;
-  gap: 14px;
+  gap: 12px; /* Slightly reduced gap */
   flex-wrap: wrap;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 4px 8px; /* Reduced padding for tighter layout */
+  border-radius: 4px;
+  font-size: 14px;   /* Optional: smaller font for compactness */
   transition: background 0.3s ease;
 }
 
@@ -80,9 +81,9 @@ nav a[href*="donate"] {
   nav {
     display: none;
     flex-direction: column;
-    background: #2d6cdf; /* blue background for mobile dropdown */
+    background: #222; /* #2d6cdf; - blue background for mobile dropdown */
     width: 100%;
-    padding: 10px 0;
+    padding: 6px 0; /* Reduced top/bottom padding */
   }
 
   nav.show {
@@ -91,8 +92,9 @@ nav a[href*="donate"] {
 
   nav a {
     color: #fff;
-    padding: 12px 20px;
+    padding: 10px 16px; /* Tighter padding on mobile links */
     text-align: center;
+	font-size: 15px;    /* Optional: slightly smaller text */
   }
 
   nav a:hover {
@@ -109,24 +111,28 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 16px;
+  padding: 8px 16px !important; /* Reduced vertical padding */
+  font-size: 14px;    /* Smaller font for compactness */
 }
 
 footer p {
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;
+  text-align: center;*/
+  margin: 6px 0;      /* Less vertical spacing */
+  text-align: center; /* Ensures centered text */
 }
 
 /* Footer social media icons */
 footer .social-media {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 12px;          /* Slightly reduced spacing */
+  margin-top: 6px;
 }
 
 footer .social-media img {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
