@@ -11,11 +11,12 @@
 </head>
 
 
-<!-- Modal for Image Preview -->
-<div id="imageModal" class="modal" onclick="closeImageModal()">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImage">
+<!--  Modal for Image Preview -->
+<div id="imageModal" onclick="closeImageModal()">
+  <span class="close-btn" onclick="closeImageModal()">×</span>
+  <img id="modalImage" src="" alt="Preview Image" />
 </div>
+
 
 <body>
 	<div id="header-placeholder"></div>
@@ -52,13 +53,14 @@
 function openImageModal(src) {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
-  modal.style.display = "block";
+  modal.style.display = "flex"; // Use flex for centered layout
   modalImg.src = src;
 }
 
 function closeImageModal() {
   document.getElementById("imageModal").style.display = "none";
 }
+
 </script>
 
   <div id="footer-placeholder"></div>
