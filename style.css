@@ -133,3 +133,100 @@ footer .social-media img {
 footer .social-media img:hover {
   transform: scale(1.2);
 }
+
+
+/* Layout container */
+.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Image styling for About section */
+.about-image {
+  max-width: 300px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Headings and paragraph text alignment */
+h2, p {
+  text-align: left;
+}
+
+/* ========== PHOTO GRID ========== */
+.photo-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ========== SCHOLARSHIP IMAGE ========== */
+.scholarship-image {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.scholarship-image img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scholarship-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ========== MODAL STYLES ========== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 75%;
+  height: 75%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content, .close {
+  animation-name: zoom;
+  animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
